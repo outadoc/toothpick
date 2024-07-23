@@ -82,7 +82,6 @@ class MethodMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -92,7 +91,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getInstance(Foo::class.java) as Foo
                 target.m(param1)
               }
@@ -152,7 +151,6 @@ class MethodMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.Lazy
             import toothpick.MemberInjector
             import toothpick.Scope
@@ -163,7 +161,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getLazy(Foo::class.java) as Lazy<Foo>
                 target.m(param1)
               }
@@ -224,7 +222,6 @@ class MethodMemberInjectorTest {
             
             import javax.inject.Provider
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -234,7 +231,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getProvider(Foo::class.java) as Provider<Foo>
                 target.m(param1)
               }
@@ -266,7 +263,6 @@ class MethodMemberInjectorTest {
             
             import kotlin.Any
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.Lazy
             import toothpick.MemberInjector
             import toothpick.Scope
@@ -277,7 +273,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getLazy(Foo::class.java) as Lazy<Foo<Any>>
                 target.m(param1)
               }
@@ -314,7 +310,6 @@ class MethodMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.Lazy
             import toothpick.MemberInjector
             import toothpick.Scope
@@ -325,7 +320,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getLazy(Foo::class.java) as Lazy<Foo<*>>
                 target.m(param1)
               }
@@ -651,7 +646,6 @@ class MethodMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -665,8 +659,7 @@ class MethodMemberInjectorTest {
               private val superMemberInjector: MemberInjector<TestMethodInjectionParent> =
                   TestMethodInjectionParent__MemberInjector()
             
-              public override fun inject(target: TestMethodInjectionParent.TestMethodInjection, scope: Scope):
-                  Unit {
+              public override fun inject(target: TestMethodInjectionParent.TestMethodInjection, scope: Scope) {
                 superMemberInjector.inject(target, scope)
               }
             }
@@ -725,7 +718,6 @@ class MethodMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -735,7 +727,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getInstance(Foo::class.java) as Foo
                 target.m(param1)
               }
@@ -795,7 +787,6 @@ class MethodMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -805,7 +796,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getInstance(Foo::class.java) as Foo
                 target.m(param1)
               }
@@ -842,7 +833,6 @@ class MethodMemberInjectorTest {
             
             import kotlin.String
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -852,7 +842,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getInstance(String::class.java) as TestTypeAlias
                 target.m(param1)
               }
@@ -891,7 +881,6 @@ class MethodMemberInjectorTest {
             import kotlin.Int
             import kotlin.String
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -901,7 +890,7 @@ class MethodMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestMethodInjection__MemberInjector : MemberInjector<TestMethodInjection> {
-              public override fun inject(target: TestMethodInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMethodInjection, scope: Scope) {
                 val param1 = scope.getInstance(Function1::class.java) as TestTypeAlias<String, Int>
                 target.m(param1)
               }
