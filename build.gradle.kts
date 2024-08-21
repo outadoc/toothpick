@@ -76,6 +76,11 @@ subprojects {
                                 name.set(extra["POM_DEVELOPER_NAME"] as String)
                             }
                         }
+
+                        organization {
+                            name.set(extra["POM_ORGANIZATION_NAME"] as String)
+                            url.set(extra["POM_ORGANIZATION_URL"] as String)
+                        }
                     }
                 }
             }
