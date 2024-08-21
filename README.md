@@ -2,22 +2,30 @@
 
 ## Background
 
-[Toothpick](https://github.com/stephanenicolas/toothpick) is a Dependency Injection library for Java & Kotlin.
+[Toothpick](https://github.com/stephanenicolas/toothpick) is a Dependency Injection library for
+Java & Kotlin.
 
-An important part of Toothpick is its ability to generate code at compile-time to avoid doing expensive reflection at
-runtime. This is handled by an *annotation processor*, which uses Java's `apt` and Kotlin's `kapt` APIs.
+An important part of Toothpick is its ability to generate code at compile-time to avoid doing
+expensive reflection at runtime. This is handled by an *annotation processor*, which uses
+Java's `apt` and Kotlin's `kapt` APIs.
 
-Recently, Google has released an alternative, modern annotation processor, built for Kotlin and compatible with Java
-projects: KSP (Kotlin Symbol Processor). This API is much faster than `kapt` on Kotlin projects.
+Google has since released an alternative, more modern annotation processor, built for Kotlin and
+compatible with Java projects: KSP (Kotlin Symbol Processor). It brings faster processing times than
+`kapt` on Kotlin projects. `kapt` has now been put in maintenance mode, and will not receive new
+features; it's recommended to migrate to KSP.
 
 ## Goals
 
-This projects aims to reimplement Toothpick's annotation processor with Kotlin-based technologies. It now uses KSP for
-better build performance, and generates Kotlin code for improved type safety.
+This projects aims to reimplement Toothpick's annotation processor with Kotlin-based technologies.
+It now uses KSP for better build performance, and generates Kotlin code for improved type safety.
 
-> **Important note:** This processor is mostly a drop-in replacement for the official `kapt` processor, but source compatibility was *not* a main goal. You might need to make small changes to your code when migrating from `apt`/`kapt` to KSP.
+> **Important note:** This processor is mostly a drop-in replacement for the official `kapt`
+> processor, but source compatibility was *not* a main goal. You might need to make small changes to
+> your code when migrating from `apt`/`kapt` to KSP.
 >
-> This is in part because of fundamental differences in the way KSP models Kotlin code compared to `kapt`, and in part because of the differences in generated Kotlin code vs. Java code (no `package` visibility modifier, for example.)
+> This is in part because of fundamental differences in the way KSP models Kotlin code compared
+> to `kapt`, and in part because of the differences in generated Kotlin code vs. Java code (
+> no `package` visibility modifier, for example.)
 
 ## Setup
 
@@ -40,7 +48,7 @@ dependencies {
     // kapt("com.github.stephanenicolas.toothpick:toothpick-compiler:...")
 
     // Replace the version number with the latest GitHub release
-    ksp("com.github.BedrockStreaming.toothpick-ksp:compiler:<latest-version>")
+    ksp("com.github.bedrockstreaming.toothpick-ksp:compiler:<latest-version>")
 }
 
 ksp {
