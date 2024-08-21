@@ -11,3 +11,8 @@ kotlinpoet-core = { module = "com.squareup:kotlinpoet", version.ref = "kotlinpoe
 kotlinpoet-ksp = { module = "com.squareup:kotlinpoet-ksp", version.ref = "kotlinpoet" }
 ksp = "com.google.devtools.ksp:symbol-processing-api:2.0.0-1.0.23"
 tp = "com.github.stephanenicolas.toothpick:toothpick:3.1.0"
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version = "2.0.0" }
+kover = { id = "org.jetbrains.kotlinx.kover", version = "0.8.3" }
+spotless = { id = "com.diffplug.gradle.spotless", version = "6.2.0" }
