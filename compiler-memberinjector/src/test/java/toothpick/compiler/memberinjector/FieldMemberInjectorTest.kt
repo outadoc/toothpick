@@ -82,7 +82,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -92,7 +91,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getInstance(Foo::class.java) as Foo
               }
             }
@@ -150,7 +149,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -160,7 +158,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getInstance(Foo::class.java, "bar") as Foo
               }
             }
@@ -224,7 +222,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -234,7 +231,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getInstance(Foo::class.java, "test.Bar") as Foo
               }
             }
@@ -294,7 +291,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -304,7 +300,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getInstance(Foo::class.java) as Foo
               }
             }
@@ -371,7 +367,6 @@ class FieldMemberInjectorTest {
             
             import javax.inject.Provider
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -381,7 +376,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getProvider(Foo::class.java, "test.Bar") as Provider<Foo>
               }
             }
@@ -444,7 +439,6 @@ class FieldMemberInjectorTest {
             
             import javax.inject.Provider
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -454,7 +448,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getProvider(Foo::class.java) as Provider<Foo>
               }
             }
@@ -521,7 +515,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -531,7 +524,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getInstance(Foo::class.java, "test.Bar") as Foo
               }
             }
@@ -649,7 +642,6 @@ class FieldMemberInjectorTest {
             
             import javax.inject.Provider
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -659,7 +651,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getProvider(Foo::class.java) as Provider<Foo>
               }
             }
@@ -717,7 +709,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.Lazy
             import toothpick.MemberInjector
             import toothpick.Scope
@@ -728,7 +719,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getLazy(Foo::class.java) as Lazy<Foo>
               }
             }
@@ -759,7 +750,6 @@ class FieldMemberInjectorTest {
             
             import kotlin.Any
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.Lazy
             import toothpick.MemberInjector
             import toothpick.Scope
@@ -770,7 +760,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getLazy(Foo::class.java) as Lazy<Foo<Any>>
               }
             }
@@ -805,7 +795,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.Lazy
             import toothpick.MemberInjector
             import toothpick.Scope
@@ -816,7 +805,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getLazy(Foo::class.java) as Lazy<Foo<*>>
               }
             }
@@ -880,7 +869,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -890,7 +878,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.foo = scope.getInstance(Foo::class.java) as Foo
                 target.foo2 = scope.getInstance(Foo::class.java) as Foo
               }
@@ -1300,7 +1288,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -1314,7 +1301,7 @@ class FieldMemberInjectorTest {
               private val superMemberInjector: MemberInjector<TestMemberInjection.InnerSuperClass> =
                   `TestMemberInjection${'$'}InnerSuperClass__MemberInjector`()
             
-              public override fun inject(target: TestMemberInjection.InnerClass, scope: Scope): Unit {
+              public override fun inject(target: TestMemberInjection.InnerClass, scope: Scope) {
                 superMemberInjector.inject(target, scope)
                 target.foo = scope.getInstance(Foo::class.java) as Foo
               }
@@ -1381,7 +1368,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -1394,7 +1380,7 @@ class FieldMemberInjectorTest {
               private val superMemberInjector: MemberInjector<TestMemberInjectionParent> =
                   TestMemberInjectionParent__MemberInjector()
             
-              public override fun inject(target: TestMemberInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMemberInjection, scope: Scope) {
                 superMemberInjector.inject(target, scope)
                 target.foo = scope.getInstance(Foo::class.java) as Foo
               }
@@ -1461,7 +1447,6 @@ class FieldMemberInjectorTest {
             package test
             
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -1474,7 +1459,7 @@ class FieldMemberInjectorTest {
               private val superMemberInjector: MemberInjector<TestMemberInjectionParent<*>> =
                   TestMemberInjectionParent__MemberInjector()
             
-              public override fun inject(target: TestMemberInjection, scope: Scope): Unit {
+              public override fun inject(target: TestMemberInjection, scope: Scope) {
                 superMemberInjector.inject(target, scope)
                 target.foo = scope.getInstance(Foo::class.java) as Foo
               }
@@ -1535,7 +1520,6 @@ class FieldMemberInjectorTest {
             
             import kotlin.String
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -1545,7 +1529,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.testTypeAlias = scope.getInstance(String::class.java) as TestTypeAlias
               }
             }
@@ -1583,7 +1567,6 @@ class FieldMemberInjectorTest {
             import kotlin.Int
             import kotlin.String
             import kotlin.Suppress
-            import kotlin.Unit
             import toothpick.MemberInjector
             import toothpick.Scope
             
@@ -1593,7 +1576,7 @@ class FieldMemberInjectorTest {
               "UNCHECKED_CAST",
             )
             public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection> {
-              public override fun inject(target: TestFieldInjection, scope: Scope): Unit {
+              public override fun inject(target: TestFieldInjection, scope: Scope) {
                 target.testTypeAlias = scope.getInstance(Function1::class.java) as TestTypeAlias<String, Int>
               }
             }

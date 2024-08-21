@@ -110,7 +110,7 @@ internal class MemberInjectorGenerator(
     ): TypeSpec.Builder = apply {
         addFunction(
             FunSpec.builder("inject")
-                .addModifiers(KModifier.OVERRIDE)
+                .addModifiers(KModifier.PUBLIC, KModifier.OVERRIDE)
                 .addParameter("target", sourceClassName)
                 .addParameter("scope", Scope::class)
                 .apply {

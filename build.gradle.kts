@@ -1,9 +1,9 @@
 import com.diffplug.gradle.spotless.SpotlessExtension
 
 plugins {
-    id("org.jetbrains.kotlinx.kover") version "0.5.0"
+    id("org.jetbrains.kotlinx.kover") version "0.8.3"
     id("com.diffplug.gradle.spotless") version "6.2.0" apply false
-    id("org.jetbrains.kotlin.jvm") version "1.7.22" apply false
+    id("org.jetbrains.kotlin.jvm") version "2.0.0" apply false
 }
 
 subprojects {
