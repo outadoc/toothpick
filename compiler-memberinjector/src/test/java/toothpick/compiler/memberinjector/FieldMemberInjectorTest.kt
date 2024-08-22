@@ -1605,4 +1605,136 @@ class FieldMemberInjectorTest {
                 "Class test.TestFieldInjection has invalid property: invalid"
             )
     }
+
+    @Test
+    fun testSimpleFieldInjectionInParameterizedClass_java() {
+        val source = javaSource(
+            "TestFieldInjection",
+            """
+            package test;
+            import javax.inject.Inject;
+            public class TestFieldInjection<T> {
+              @Inject Foo foo;
+              public TestFieldInjection() {}
+            }
+            class Foo {}
+            """
+        )
+
+        compilationAssert()
+            .that(source)
+            .processedWith(MemberInjectorProcessorProvider())
+            .compilesWithoutError()
+            .generatesSources(testSimpleFieldInjectionParameterizedClass_expected)
+    }
+
+    @Test
+    fun testSimpleFieldInjectionInParameterizedClass_kotlin() {
+        val source = ktSource(
+            "TestFieldInjection",
+            """
+            package test
+            import javax.inject.Inject
+            class TestFieldInjection<T> {
+              @Inject lateinit var foo: Foo
+            }
+            class Foo
+            """
+        )
+
+        compilationAssert()
+            .that(source)
+            .processedWith(MemberInjectorProcessorProvider())
+            .compilesWithoutError()
+            .generatesSources(testSimpleFieldInjectionParameterizedClass_expected)
+    }
+
+    private val testSimpleFieldInjectionParameterizedClass_expected = expectedKtSource(
+        "test/TestFieldInjection__MemberInjector",
+        """
+            package test
+            
+            import kotlin.Suppress
+            import toothpick.MemberInjector
+            import toothpick.Scope
+            
+            @Suppress(
+              "ClassName",
+              "RedundantVisibilityModifier",
+              "UNCHECKED_CAST",
+            )
+            public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection<*>> {
+              public override fun inject(target: TestFieldInjection<*>, scope: Scope) {
+                target.foo = scope.getInstance(Foo::class.java) as Foo
+              }
+            }
+            """
+    )
+
+    @Test
+    fun testSimpleFieldInjectionInMultipleParameterizedClass_java() {
+        val source = javaSource(
+            "TestFieldInjection",
+            """
+            package test;
+            import java.io.Reader;
+            import javax.inject.Inject;
+            public class TestFieldInjection<T, U extends StringBuilder, V extends Reader> {
+              @Inject Foo foo;
+              public TestFieldInjection() {}
+            }
+            class Foo {}
+            """
+        )
+
+        compilationAssert()
+            .that(source)
+            .processedWith(MemberInjectorProcessorProvider())
+            .compilesWithoutError()
+            .generatesSources(testSimpleFieldInjectionMultipleParameterizedClass_expected)
+    }
+
+    @Test
+    fun testSimpleFieldInjectionInMultipleParameterizedClass_kotlin() {
+        val source = ktSource(
+            "TestFieldInjection",
+            """
+            package test
+            import java.io.Reader
+            import javax.inject.Inject
+            class TestFieldInjection<T, U: StringBuilder, V: java.io.Reader> {
+              @Inject lateinit var foo: Foo
+            }
+            class Foo
+            """
+        )
+
+        compilationAssert()
+            .that(source)
+            .processedWith(MemberInjectorProcessorProvider())
+            .compilesWithoutError()
+            .generatesSources(testSimpleFieldInjectionMultipleParameterizedClass_expected)
+    }
+
+    private val testSimpleFieldInjectionMultipleParameterizedClass_expected = expectedKtSource(
+        "test/TestFieldInjection__MemberInjector",
+        """
+            package test
+            
+            import kotlin.Suppress
+            import toothpick.MemberInjector
+            import toothpick.Scope
+            
+            @Suppress(
+              "ClassName",
+              "RedundantVisibilityModifier",
+              "UNCHECKED_CAST",
+            )
+            public class TestFieldInjection__MemberInjector : MemberInjector<TestFieldInjection<*, *, *>> {
+              public override fun inject(target: TestFieldInjection<*, *, *>, scope: Scope) {
+                target.foo = scope.getInstance(Foo::class.java) as Foo
+              }
+            }
+            """
+    )
 }
